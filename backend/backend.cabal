@@ -1,0 +1,87 @@
+name: backend
+version: 0.1
+cabal-version: >= 1.8
+build-type: Simple
+
+library
+  hs-source-dirs: src
+  if impl(ghcjs)
+    buildable: False
+  build-depends: base
+               , common
+               , frontend
+               , obelisk-backend
+               , servant-snap
+               , snap-server
+               , snap-core
+               , snap
+               , snap-cors
+               , selda == 0.3.3.0
+               , selda-sqlite 
+               , aeson
+               , map-syntax
+               , text
+               , heist
+               , lens
+               , data-default
+               , obelisk-asset-serve-snap
+               , obelisk-snap
+               , bytestring
+               , reflex-dom
+               , directory
+               , cookie
+               , servant-auth
+               , email-validate   
+               --, servant-auth-server
+               , blaze-html
+               , servant
+               , mtl
+               , either
+              
+  exposed-modules:
+                  Backend
+
+  ghc-options: -Wall
+
+executable backend
+  main-is: main.hs
+  hs-source-dirs: src
+  if impl(ghcjs)
+    buildable: False
+  build-depends: base
+               , backend
+               , common
+               , frontend
+               , lens
+               , modern-uri
+               , obelisk-backend
+               , obelisk-executable-config
+               , obelisk-executable-config-inject
+               , text
+               , snap-cors
+               , selda == 0.3.3.0
+               , selda-sqlite
+               , aeson 
+               , map-syntax
+               , text
+               , heist
+               , lens
+               , data-default
+               , obelisk-asset-serve-snap
+               , obelisk-snap
+               , bytestring
+               , reflex-dom
+               , snap-core
+               , snap
+               , servant-snap
+               , snap-server
+               , directory
+               , cookie
+               , email-validate
+               , blaze-html
+               , servant
+               , mtl
+               , either
+               
+
+               

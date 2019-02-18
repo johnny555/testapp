@@ -1,0 +1,27 @@
+name: common
+version: 0.1
+cabal-version: >= 1.2
+build-type: Simple
+
+library
+  hs-source-dirs: src
+  build-depends: base,
+                 text ,
+                 servant,
+                 aeson,
+                 lens,
+                 data-default,
+                 bytestring,
+                 cookie,
+                 http-api-data,
+                 servant-blaze,
+                 http-media,
+                 selda,
+                 containers
+                 
+                 
+                 
+
+  exposed-modules:
+                  Common.Api
+
